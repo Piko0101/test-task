@@ -1,29 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Шапка сайта</h1>
-    <p>hello</p>
-</body>
-</html>
-    <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Inter:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
 
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header --flex">
+  <div class="header__breadcrumb">
+    <ul class="breadcrumb --flex">
+      <li>ABOUT</li>
+      <li>GALERY</li>
+      <li>PRICING</li>
+      <li>FAQ</li>
+      <li>BENEFITS</li>
+    </ul>
+  </div>
+  <div class="header__actions --flex">
+      <button class="button button-default header_btn">
+          SIGN IN
+      </button>
+      <button class=" button button-primary header_btn" id="signupBtn">
+        SIGN UP
+    </button>
+  </div>
+</header>
+
+    <main>
+      <div class="banner container --flex">
+  <div class="banner__info --flex">
+    <h1 class="header-text">
+      Many reasons to get up and start to get back in the business
+    </h1>
+    <p>
+      The harder you work for something, the greater you’ll feel when you
+      achieve it.
+    </p>
+    <div class="banner__actions --flex">
+      <button class="button button-default banner_btn">LEARN MORE</button>
+      <button class="button button-primary banner_btn">DEMO</button>
+    </div>
+  </div>
+  <div class="banner__img">
+    <img src="img/Frame.png" />
+  </div>
+</div>
+<div class="logos">
+  <img src="img/logos.png" />
+</div>
+ <div class="choice container">
+  <div class="choice__header">
+    <h1 class="header-text">Your Choice</h1>
+    <p>
+      There are many reasons to get down and start to get depressed about your
+      situation.
+    </p>
+  </div>
+  <div class="choice__content --flex">
+    <!-- <div class="choice__column"> -->
+      <div class="choice__block">
+        <div class="choice__icon">
+          <img src="img/choice-icon1.png" />
+        </div>
+        <div class="choice__info">
+          <h3>Ecstatic elegance</h3>
+          <p>
+            Article nor prepare chicken you him now. Shy merits say advice ten
+            before lovers innate add.
+          </p>
+        </div>
+      </div>
+      <div class="choice__block">
+        <div class="choice__icon">
+          <img src="img/choice-icon2.png" />
+        </div>
+        <div class="choice__info">
+          <h3>Open game</h3>
+          <p>
+            Shy merits say advice ten before lovers innate add. She cordially
+            behaviour can attempted estimable.
+          </p>
+        </div>
+      </div>
+    <!-- </div> -->
+    <!-- <div class="choice__column"> -->
+      <div class="choice__block">
+        <div class="choice__icon">
+          <img src="img/choice-icon3.png" />
+        </div>
+        <div class="choice__info">
+          <h3>Folly words widow</h3>
+          <p>
+            Effect if in up no depend seemed. Ecstatic elegance gay but
+            disposed. We me rent been part what.
+          </p>
+        </div>
+      </div>
+      <div class="choice__block">
+        <div class="choice__icon">
+          <img src="img/choice-icon4.png" />
+        </div>
+        <div class="choice__info">
+          <h3>Endeavor</h3>
+          <p>
+            Improve ashamed married expense bed her comfort pursuit mrs. Four
+            time took ye your as fail lady.
+          </p>
+        </div>
+      </div>
+    <!-- </div> -->
+    <!-- <div class="choice__column"> -->
+      <div class="choice__block">
+        <div class="choice__icon">
+          <img src="img/choice-icon5.png" />
+        </div>
+        <div class="choice__info">
+          <h3>Possible procured</h3>
+          <p>
+            We me rent been part what. An concluded sportsman offending so
+            provision mr education.
+          </p>
+        </div>
+      </div>
+      <div class="choice__block">
+        <div class="choice__icon">
+          <img src="img/choice-icon6.png" />
+        </div>
+        <div class="choice__info">
+          <h3>Comfort pursuit</h3>
+          <p>
+            Had denoting properly jointure you occasion directly raillery. In
+            said to of poor full be post face snug.
+          </p>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+
+      <div class="promotion container --flex">
+  <div class="promotion__info --flex">
+    <h1 class="header-text">
+      Invest property for better <span>business</span>
+    </h1>
+    <p>
+      We are committed to processing the information in order to contact you and
+      talk about your project. We are committed to processing the information.
+    </p>
+    <button class="button button-primary promotion_btn">LEARN MORE</button>
+  </div>
+  <div class="promotion__img">
+      <img src="img/Object.png">
+    <img class="stock-img"src="img/promotion-img.png" />
+  </div>
+</div>
+ <div class="subscription container --flex">
+  <h2>There are many reasons to get down</h2>
+  <p>
+    There are many reasons to get down and start to get depressed about your
+    situation.
+  </p>
+
+  <div class="subscription__input">
+    <form class="--flex" id="subscription-form" method="post">
+      <input type="text" name="email" placeholder="Your Email" id="email-input" />
+      <button class="button button-primary input_btn" type="submit">SEND</button>
+    </form>
+  </div>
+  <span>No spam. Only releases, updates and discounts</span>
+</div>
+
+      <div class="footer container ">
+    <div class="footer__header --flex">
+        <h2>ARShakir</h2>
+        <img src="img/Social.png">
+    </div>
+    <div class="footer__content --flex ">
+        <div class="footer__block block">
+            <p class="block__header">
+                First
+            </p>
+            <div class="block__pages">
+                <p>First page</p>
+                <p>Second page</p>
+                <p>Third page</p>
+                <p>Fourth page</p>
+            </div>
+        </div>
+        <div class="footer__block block">
+            <p class="block__header">
+                Second
+            </p>
+            <div class="block__pages">
+                <p>First page</p>
+                <p>Second page</p>
+                <p>Third page</p>
+                <p>Fourth page</p>
+            </div>
+        </div>
+        <div class="footer__block block">
+            <p class="block__header">
+                Third
+            </p>
+            <div class="block__pages">
+                <p>First page</p>
+                <p>Second page</p>
+                <p>Third page</p>
+                <p>Fourth page</p>
+            </div>
+        </div>
+        <div class="footer__block block">
+            <p class="block__header">
+                Fourth
+            </p>
+            <div class="block__pages">
+                <p>First page</p>
+                <p>Second page</p>
+                <p>Third page</p>
+                <p>Fourth page</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom --flex">
+        <p>© Copyrights 2021</p>
+        <p>Privacy policy</p>
+        <p>Terms of service</p>
+    </div>
+</div> <div class="modal" id="signUp-modal">
+    <div class="modal-content">
+        <span class="close_btn" id='closeBtn' >
+            &times;
+        </span>
+        <div class="sign-up --flex">
+            
+        <h1>Sign Up</h1>
+<div id="signup-container" class="sign-up --flex">
+  <p>Fill in the data for registration on the site</p>
+  <div class="sign-up__form">
+    <form class="--flex" id="signup-form">
+      <input placeholder="Your Email" name="email" id="email" />
+      <input placeholder="+7 (777) 777 77-77" id="phone" />
+      <input placeholder="Your password" type="password" id="password" />
+      <!-- <i
+                  class="far fa-eye"
+                  id="togglePassword"
+                  style="margin-left: -30px; cursor: pointer"
+                ></i> -->
+
+      <input
+        placeholder="Confirm password"
+        type="password"
+        id="password_confirmation"
+      />
+      <!-- <i
+                  class="far fa-eye"
+                  id="togglePassword"
+                  style="margin-left: -30px; cursor: pointer"
+                ></i> -->
+
+      <button class="button button-primary modal_btn" type="submit">
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>
+<div id="success-container" class="sign-up --flex">
+  <p>Thank you!</p>
+  <img src="img/Heart.png" />
+  <p>Registration completed. Use sign in form to continue.</p>
+  <button class="button button-primary modal_btn">Sign In</button>
+</div>
+
+        </div>
+    </div>
+</div>
     </main>
-</body>
+    <script src="js/script.min.js"></script>
+  </body>
 </html>

@@ -1,3 +1,371 @@
-h1 {
-    color: blue;
+// RESETTING STYLES
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// VARIABLES
+
+$header-font-color: #99efd0;
+$button-color: #f2994a;
+$main-font-color: #8476aa;
+$footer-font-color: #ffffff;
+$background-color: linear-gradient(222.26deg, #3b1d60 10%, #040d3e 105%);
+$list-color: #b5b5b5;
+$main-font-size: calc(12px + 6 * ((100vw - 375px) / (1920 - 375)));
+$footer-bottom-color: #8d8d8d;
+
+//GLOBAL STYLE
+body {
+  background: $background-color;
+  padding: 4vw 9vw;
+  font-size: $main-font-size;
+  font-family: "Rubik", sans-serif;
+}
+.button {
+  border-radius: 4px;
+  font-size: 0.8em;
+  line-height: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  &-primary {
+    background: $button-color;
+    color: white;
+    border: none;
+  }
+  &-default {
+    border: 1px solid $button-color;
+    background: transparent;
+    color: $button-color;
+  }
+}
+.header-text {
+  font-size: 2.5em;
+  color: $header-font-color;
+}
+p {
+  font-size: 1.2em;
+  color: $main-font-color;
+}
+
+h2 {
+  color: $button-color;
+  font-size: 2em;
+  text-align: center;
+}
+img {
+  width: 100%;
+}
+.--flex {
+  display: flex;
+}
+
+.container {
+  margin-top: 7em;
+  @media (max-width: 670px) {
+    margin-top: 3em;
+  }
+}
+
+// HEADER STYLE
+.header {
+  justify-content: space-between;
+}
+.header__actions {
+  gap: 1em;
+  flex-wrap: wrap;
+  .header_btn {
+    max-height: 36px;
+    padding: 0.7em 2.3em;
+  }
+}
+.breadcrumb {
+  gap: 1em;
+  color: $list-color;
+  li {
+    list-style: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+}
+
+// BANNER STYLE
+
+.banner {
+  gap: 2em;
+  @media (max-width: 670px) {
+    justify-content: center;
+    gap: 0;
+  }
+  &__info {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    font-size: $main-font-size;
+  }
+  &__img {
+    img {
+      min-width: 150px;
+      @media (max-width: 670px) {
+        display: none;
+      }
+    }
+  }
+  &__actions {
+    margin-top: 2em;
+    gap: 1em;
+    flex-wrap: wrap;
+    @media (max-width: 670px) {
+      justify-content: center;
+    }
+  }
+  &_btn {
+    min-width: 157px;
+    max-height: 46px;
+    padding: 1em 2em;
+  }
+}
+.logos {
+  margin-top: 5em;
+  img {
+    display: block;
+    margin: 0 auto;
+    opacity: 0.5;
+  }
+}
+
+// CHOICE STYLE
+
+.choice {
+  &__header {
+    text-align: center;
+    p {
+      margin-top: 0.7em;
+    }
+  }
+  &__content {
+    margin-top: 4em;
+    gap: 3em;
+    flex-wrap: wrap;
+    > * {
+      flex: 1 1 30%;
+    }
+  }
+
+  &__block {
+    display: flex;
+    margin-bottom: 1em;
+  }
+  &__info {
+    margin-left: 1.5em;
+    h3 {
+      color: $header-font-color;
+      margin-bottom: 0.6em;
+    }
+    p {
+      font-size: 0.8em;
+      font-weight: 500;
+    }
+  }
+}
+
+// PROMOTION STYLE
+.promotion {
+  gap: 5em;
+  &__img {
+    position: relative;
+    .stock-img {
+      position: absolute;
+      left: 25%;
+      max-width: 260px;
+    }
+  }
+  &__info {
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 1 40%;
+    gap: 3em;
+  }
+  &_btn {
+    max-width: 155px;
+    max-height: 54px;
+    padding: 1.5em 2em;
+  }
+}
+
+// SUBSCRIPTION STYLE
+.subscription {
+  border-radius: 5px;
+  background-color: rgba(60, 62, 125, 0.19);
+  padding: 3.5em;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+
+  p {
+    color: #95a1bb;
+    font-size: 0.9em;
+    max-width: 396px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  span {
+    color: $main-font-color;
+    font-size: 0.8em;
+    text-align: center;
+  }
+  &__input {
+    form {
+      height: 3.1em;
+    }
+    input {
+      max-width: 308px;
+      max-height: 56px;
+      width: 49vw;
+      height: 100%;
+      border-radius: 5px;
+      padding: 1em;
+      border: none;
+      color: white;
+      background-color: rgba(60, 62, 125, 0.5);
+      &::placeholder {
+        color: $footer-font-color;
+        opacity: 0.2;
+        font-size: 1.2em;
+        letter-spacing: 0.2px;
+      }
+    }
+    .input_btn {
+      max-height: 56px;
+      max-width: 128px;
+      width: 21vw;
+      height: 100%;
+    }
+  }
+}
+
+// FOOTER STYLE
+.footer {
+  &__header {
+    justify-content: space-between;
+    margin-bottom: 5em;
+  }
+  &__content {
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: space-between;
+    margin-bottom: 5em;
+    > * {
+      flex: 0 0 max-content;
+    }
+    p {
+      color: $footer-font-color;
+    }
+    .block__header {
+      font-size: 0.9em;
+      font-weight: 700;
+      margin-bottom: 1.5em;
+    }
+    .block__pages {
+      font-size: 0.7em;
+      p {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  &__bottom {
+    justify-content: center;
+    font-size: 0.7em;
+    gap: 3em;
+    color: $footer-bottom-color;
+  }
+}
+
+//MODAL STYLE
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 251, 251, 0.3);
+  font-family: "Inter", sans-serif;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 20% auto;
+  padding: 0.5em 2em;
+  max-width: 1318px;
+  width: 70%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 0 $button-color, 2px 1px 2px $button-color;
+}
+
+.close_btn {
+  color: $button-color;
+  font-size: 2.5em;
+  float: right;
+  cursor: pointer;
+}
+
+// SIGN-UP MODAL
+.sign-up {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3em;
+  gap: 2em;
+  &__form {
+    margin: 0 auto;
+    @media (max-width: 420px) {
+      width: 100%;
+    }
+  }
+  h1 {
+    font-size: 2.4em;
+    font-weight: 700;
+  }
+  p {
+    font-size: $main-font-size;
+    color: black;
+    text-align: center;
+  }
+  form {
+    flex-direction: column;
+    gap: 1em;
+  }
+  input {
+    max-width: 372px;
+    width: 55vw;
+    height: 3.1em;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    &::placeholder {
+      color: black;
+      opacity: 0.2;
+    }
+    @media (max-width: 420px) {
+      width: 100%;
+    }
+  }
+  .modal_btn {
+    max-width: 120px;
+    padding: 1em 2em;
+    margin: 2em auto;
+  }
+}
+#success-container {
+  display: none;
 }

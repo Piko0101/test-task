@@ -28,7 +28,11 @@ let { src, dest } = require("gulp"),
   browsersync = require("browser-sync").create(),
   fileinclude = require("gulp-file-include"),
   del = require("del"),
-  scss = require("gulp-sass")(require("sass"));
+  scss = require("gulp-sass")(require("sass")),
+  autoprefixer = require("gulp-autoprefixer"),
+  clean_css = require("gulp-clean-css"),
+  rename = require("gulp-rename"),
+  uglify = require("gulp-uglify-es").default;
 
 function browserSync(params) {
   browsersync.init({
@@ -46,12 +50,43 @@ function html() {
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream());
 }
+function image() {
+  return src(path.src.img)
+    .pipe(dest(path.build.img))
+    .pipe(browsersync.stream());
+}
 
+function js() {
+  return src(path.src.js)
+    .pipe(fileinclude())
+    .pipe(dest(path.build.js))
+    .pipe(uglify())
+    .pipe(
+      rename({
+        extname: ".min.js",
+      })
+    )
+    .pipe(dest(path.build.js))
+    .pipe(browsersync.stream());
+}
 function css() {
   return src(path.src.css)
     .pipe(
       scss({
         outputStyle: "expanded",
+      })
+    )
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 5 versions"],
+        cascade: true,
+      })
+    )
+    .pipe(dest(path.build.css))
+    .pipe(clean_css())
+    .pipe(
+      rename({
+        extname: ".min.css",
       })
     )
     .pipe(dest(path.build.css))
@@ -61,15 +96,19 @@ function css() {
 function watchFiles(params) {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
+  gulp.watch([path.watch.js], js);
+  gulp.watch([path.watch.img], image);
 }
 
 function clean(params) {
   return del(path.clean);
 }
 
-let build = gulp.series(clean,  gulp.parallel(css, html));
+let build = gulp.series(clean, gulp.parallel(css, html, js, image));
 let watch = gulp.parallel(browserSync, build, watchFiles);
 
+exports.image = image;
+exports.js = js;
 exports.css = css;
 exports.html = html;
 exports.build = build;
