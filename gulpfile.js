@@ -18,7 +18,7 @@ let path = {
     html: source_folder + "/**/*.html",
     css: source_folder + "/scss/**/*.scss",
     js: source_folder + "/js/**/*.js",
-    img: source_folder + "/img/*.png",
+    img: source_folder + "/img/**/*.png",
   },
   clean: "./" + project_folder + "/",
 };
@@ -32,6 +32,7 @@ let { src, dest } = require("gulp"),
   autoprefixer = require("gulp-autoprefixer"),
   clean_css = require("gulp-clean-css"),
   rename = require("gulp-rename"),
+  group_media = require("gulp-group-css-media-queries"),
   uglify = require("gulp-uglify-es").default;
 
 function browserSync(params) {
@@ -75,6 +76,9 @@ function css() {
       scss({
         outputStyle: "expanded",
       })
+    )
+    .pipe(
+      group_media()
     )
     .pipe(
       autoprefixer({

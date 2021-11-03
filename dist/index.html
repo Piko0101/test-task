@@ -19,15 +19,15 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="header --flex">
+    <header class="header --flex" id="header">
   <div class="header__breadcrumb">
-    <ul class="breadcrumb --flex">
-      <li>ABOUT</li>
-      <li>GALERY</li>
-      <li>PRICING</li>
-      <li>FAQ</li>
-      <li>BENEFITS</li>
-    </ul>
+    <nav class="breadcrumb --flex">
+      <a href="#banner">ABOUT</a>
+      <a href="#choice">GALERY</a>
+      <a href="#promotion">PRICING</a>
+      <a href="#subscription">FAQ</a>
+      <a href="#footer">BENEFITS</a>
+    </nav>
   </div>
   <div class="header__actions --flex">
       <button class="button button-default header_btn">
@@ -40,7 +40,7 @@
 </header>
 
     <main>
-      <div class="banner container --flex">
+      <div class="banner container --flex" id="banner">
   <div class="banner__info --flex">
     <h1 class="header-text">
       Many reasons to get up and start to get back in the business
@@ -61,7 +61,7 @@
 <div class="logos">
   <img src="img/logos.png" />
 </div>
- <div class="choice container">
+ <div class="choice container" id="choice">
   <div class="choice__header">
     <h1 class="header-text">Your Choice</h1>
     <p>
@@ -151,7 +151,7 @@
   </div>
 </div>
 
-      <div class="promotion container --flex">
+      <div class="promotion container --flex" id="promotion">
   <div class="promotion__info --flex">
     <h1 class="header-text">
       Invest property for better <span>business</span>
@@ -167,7 +167,7 @@
     <img class="stock-img"src="img/promotion-img.png" />
   </div>
 </div>
- <div class="subscription container --flex">
+ <div class="subscription container --flex" id="subscription">
   <h2>There are many reasons to get down</h2>
   <p>
     There are many reasons to get down and start to get depressed about your
@@ -183,7 +183,7 @@
   <span>No spam. Only releases, updates and discounts</span>
 </div>
 
-      <div class="footer container ">
+      <div class="footer container" id="footer">
     <div class="footer__header --flex">
         <h2>ARShakir</h2>
         <img src="img/Social.png">
