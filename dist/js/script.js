@@ -15,7 +15,6 @@ closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", clickOutside);
 
 function openModal() {
-  console.log("hello");
   modal.style.display = "block";
 }
 function closeModal() {
