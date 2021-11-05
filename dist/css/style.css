@@ -373,7 +373,7 @@ img {
 
 .modal-content {
   background-color: white;
-  margin: 20% auto;
+  margin: 10% auto;
   padding: 0.5em 2em;
   max-width: 1318px;
   width: 70%;
@@ -473,6 +473,15 @@ img {
 
 #success-container {
   display: none;
+}
+
+.password-input {
+  display: grid;
+}
+
+.message {
+  color: red;
+  font-size: 0.5em;
 }
 
 @media (max-width: 1000px) {

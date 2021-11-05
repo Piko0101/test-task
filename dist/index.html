@@ -251,26 +251,31 @@
   <p>Fill in the data for registration on the site</p>
   <div class="sign-up__form">
     <form class="--flex" id="signup-form">
-      <input placeholder="Your Email" name="email" id="email" />
-      <input placeholder="+7 (777) 777 77-77" id="phone" />
-      <input placeholder="Your password" type="password" id="password" />
-      <!-- <i
+      <input placeholder="Your Email" name="email" id="email" required/>
+      <input placeholder="+7 (777) 777 77-77" id="phone" required/>
+      <div class="password-input">
+        <input placeholder="Your password" type="password" id="password" required/>
+        <!-- <i
+          class="far fa-eye"
+          id="togglePassword"
+          style="margin-left: -30px; cursor: pointer"
+        ></i> -->
+        <span id="message" class="message"> </span>
+      </div>
+      <div class="password-input">
+        <input
+          placeholder="Confirm password"
+          type="password"
+          id="password_confirmation"
+          required
+        />
+        <span id="confirm-message" class="message"> </span>
+        <!-- <i
                   class="far fa-eye"
                   id="togglePassword"
                   style="margin-left: -30px; cursor: pointer"
                 ></i> -->
-
-      <input
-        placeholder="Confirm password"
-        type="password"
-        id="password_confirmation"
-      />
-      <!-- <i
-                  class="far fa-eye"
-                  id="togglePassword"
-                  style="margin-left: -30px; cursor: pointer"
-                ></i> -->
-
+      </div>
       <button class="button button-primary modal_btn" type="submit">
         Sign Up
       </button>

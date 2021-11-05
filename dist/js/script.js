@@ -79,9 +79,15 @@ function postSignUpForm(e) {
     .then((res) => res.json())
     .then((response) => {
       console.log("Success:", JSON.stringify(response));
-      signupContainer.style.display = 'none'
-      signupSuccess.style.display = 'block'
+      if (response.status === "success") {
+        signupContainer.style.display = "none";
+        signupSuccess.style.display = "block";
+      } 
     })
     .catch((error) => console.error("Error:", error));
   console.log(data);
 }
+
+//////// VALIDATORS
+
+
