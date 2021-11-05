@@ -29,6 +29,7 @@ function clickOutside(e) {
 //////SUBSCRIPTION JS
 
 const subscriptionForm = document.getElementById("subscription-form");
+const emailInput  = document.getElementById("email-input")
 
 subscriptionForm.addEventListener("submit", postEmailData);
 
@@ -45,7 +46,19 @@ function postEmailData(e) {
     },
   })
     .then((res) => res.json())
-    .then((response) => console.log("Success:", JSON.stringify(response)))
+    .then((response) => {
+      console.log("Success:", JSON.stringify(response));
+      if (response.status === "success") {
+        emailInput.style.backgroundColor = "#c1d4c1";
+        document.getElementById("successfull-message").innerHTML =
+          "Thank you! You have subscribed successfully";
+      } else {
+        emailInput.style.border = "red";
+        emailInput.style.backgroundColor = "#f78484";
+        document.getElementById("successfull-message").innerHTML =
+          "**The email must be a valid email address.";
+      }
+    })
     .catch((error) => console.error("Error:", error));
 }
 
@@ -83,7 +96,7 @@ function postSignUpForm(e) {
         signupContainer.style.display = "none";
         signupSuccess.style.display = "block";
       } else {
-        verifyPassword()
+        verifyPassword();
       }
     })
     .catch((error) => console.error("Error:", error));
@@ -94,22 +107,14 @@ function postSignUpForm(e) {
 
 function verifyPassword() {
   const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("password_confirmation").value;
-  if (password == "") {
-    document.getElementById("message").innerHTML =
-      "**Fill the password please!";
-    return false;
-  }
+  const confirmPassword = document.getElementById(
+    "password_confirmation"
+  ).value;
   if (password.length < 8) {
     document.getElementById("message").innerHTML =
       "**Password length must be atleast 8 characters";
     return false;
   }
-  if (password.length > 15) {
-    document.getElementById("message").innerHTML =
-      "**Password length must not exceed 15 characters";
-    return false;
-  } 
   if (password != confirmPassword) {
     document.getElementById("confirm-message").innerHTML =
       "**Passwords did not match";
