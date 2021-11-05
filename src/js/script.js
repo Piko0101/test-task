@@ -82,7 +82,9 @@ function postSignUpForm(e) {
       if (response.status === "success") {
         signupContainer.style.display = "none";
         signupSuccess.style.display = "block";
-      } 
+      } else {
+        verifyPassword()
+      }
     })
     .catch((error) => console.error("Error:", error));
   console.log(data);
@@ -90,4 +92,28 @@ function postSignUpForm(e) {
 
 //////// VALIDATORS
 
-
+function verifyPassword() {
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("password_confirmation").value;
+  if (password == "") {
+    document.getElementById("message").innerHTML =
+      "**Fill the password please!";
+    return false;
+  }
+  if (password.length < 8) {
+    document.getElementById("message").innerHTML =
+      "**Password length must be atleast 8 characters";
+    return false;
+  }
+  if (password.length > 15) {
+    document.getElementById("message").innerHTML =
+      "**Password length must not exceed 15 characters";
+    return false;
+  } 
+  if (password != confirmPassword) {
+    document.getElementById("confirm-message").innerHTML =
+      "**Passwords did not match";
+  } else {
+    return true;
+  }
+}
